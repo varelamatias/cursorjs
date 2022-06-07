@@ -16,7 +16,7 @@ const NavBar = () => {
               <a className="nav-link" href="#elEstudio">FinanSolution</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#nS">Nosotros</a>
+              <a className="nav-link" href="#nS">DESAFIO</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#aP">Por qué elegirnos</a>
