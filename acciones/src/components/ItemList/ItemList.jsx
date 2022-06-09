@@ -15,8 +15,21 @@ const ItemList = () => {
     }, [])
 
     return (
-        <div>
-            {inventarioAcciones.map(acc => <li key={acc.id}>{acc.nombre} $ {acc.precio}</li>)}
+        <div className="container">
+            <div className="row" id="acceionesC">
+                {inventarioAcciones.map(acc =>
+                    <div className="col-12 mb-2 col-md-4" key={acc.id}>
+                        <div className="card">
+                        {/* <img src={acc.img} alt="" className="card-img-top"> */}
+                            <div className="card-body" >
+                                <h5>{acc.nombre}</h5>
+                                <p>${acc.precio}</p>
+                                <button className="btn btn-dark" id={acc.id}>agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </div>
         </div>
     )
 }

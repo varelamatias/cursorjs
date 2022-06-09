@@ -9,11 +9,11 @@ let inventarioAcciones = [
 
 ]
 
-export const getFetch = ()=>{
+
+export const getFetch = () =>{
     return new Promise((resolve,reject)=>{
         setTimeout(()=>{
             resolve(inventarioAcciones)
-        })
-    },3000)
+        },2000)
+    })
 }
-

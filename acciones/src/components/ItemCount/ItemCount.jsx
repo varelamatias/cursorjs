@@ -25,7 +25,7 @@ function ItemCount ({stock,init}) {
     }
 
     return (
-        <section className='parteDelHome'>
+        <section >
             <div  id="nS" className="secA1">
                 <h2>la cantidad es = {count}</h2>
                 <button onClick={sumar}>+</button>
