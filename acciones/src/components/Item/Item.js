@@ -14,6 +14,22 @@ export const getFetch = () =>{
     return new Promise((resolve,reject)=>{
         setTimeout(()=>{
             resolve(inventarioAcciones)
+           
+        },2000)
+    })
+}
+
+
+
+
+
+let inventarioAccion = {id: 1, nombre: "Acciones GGL", precio: 8000, img:'./Assets/images/2.jpg'}
+
+
+export const getFetchOne = () =>{
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve(inventarioAccion)
         },2000)
     })
 }

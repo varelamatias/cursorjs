@@ -5,17 +5,20 @@ import { getFetch } from "../Item/Item"
 
 const ItemList = () => {
     const [inventarioAcciones, setInventarioAcciones] = useState([])
+    const[loading, setLoading] = useState(true)
     useEffect(() => {
         getFetch()
             .then((resp) => {
                 setInventarioAcciones(resp);
             })
             .catch(error => console.log(error))
-            .finally(() => console.log())
+            .finally(() => setLoading(false))
     }, [])
 
     return (
         <div className="container">
+            {
+            loading ? <h1>Loading...</h1>:
             <div className="row" id="acceionesC">
                 {inventarioAcciones.map(acc =>
                     <div className="col-12 mb-2 col-md-4" key={acc.id}>
@@ -29,9 +32,10 @@ const ItemList = () => {
                         </div>
                     </div>
                 )}
-            </div>
+            </div>}
         </div>
     )
 }
+
 
 export default ItemList
