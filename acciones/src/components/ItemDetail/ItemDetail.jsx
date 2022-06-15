@@ -1,12 +1,12 @@
 
-const ItemDetail = (acc) =>{
+const ItemDetail = ({inventarioAccion}) =>{
     return (
         <div className="container">
             <div className="row">    
                 <div className="col-md-6">  
-                    <h3>{acc.id}</h3>
-                    <h4>{acc.nombre}</h4>
-                    <h5>{acc.precio}</h5>
+                    <p>{inventarioAccion.id}</p>
+                    <p>{inventarioAccion.nombre}</p>
+                    <p>{inventarioAccion.precio}</p>
                 </div>            
             </div>
       </div>

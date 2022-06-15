@@ -13,7 +13,11 @@ const ItemDetailContainer = () => {
      
     }, [])
         
-    return<ItemDetail inventarioAccion = {inventarioAccion}/>
+    return(
+        <>
+            <ItemDetail inventarioAccion = {inventarioAccion}/>
+        </>
+    )
 }
 
 

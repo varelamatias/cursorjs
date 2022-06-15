@@ -1,35 +1,25 @@
 import CartWidget from "../CartWidget/CartWidget"
-
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 const NavBar = () => {
   return (
-    <nav className="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-      <div className="container-fluid">
-        <div className="collapse navbar-collapse" id="navbarColor02">
-          <ul className="navbar-nav mx-auto">
-            <li className="nav-item">
-              <a className="nav-link active" href="#">Inicio
-                <span className="visually-hidden">(current)</span>
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#elEstudio">FinanSolution</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#nS">Nosotros</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#aP">Por qué elegirnos</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#clientesWeb">Comprar</a>
-            </li>
-          </ul>
-        </div>  
-        <CartWidget/>
-      </div>
-    </nav>
-  )
+    <>
+      <Navbar bg="dark" variant="dark">
+        <Container>
+          <Nav className="me-auto">
+            <Nav.Link href="/">Inicio</Nav.Link>
+            <Nav.Link href="#elEstudio">FinanSolution</Nav.Link>
+            <Nav.Link href="#nS">Nosotros</Nav.Link>
+            <Nav.Link href="#aP">Por qué elegirnos</Nav.Link>
+            <Nav.Link href="#clientesWeb">Comprar</Nav.Link>
+          </Nav>
+          <CartWidget/>
+        </Container>
+      </Navbar>
+    </>
+  );
 }
 
 export default NavBar

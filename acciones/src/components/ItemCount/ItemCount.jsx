@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Button from 'react-bootstrap/Button';
 
 function ItemCount ({stock,init}) {
 
@@ -26,12 +27,12 @@ function ItemCount ({stock,init}) {
 
     return (
         <section >
-            <div  id="nS" className="secA1">
+            <div  id="nS" className="">
                 <h2>la cantidad es = {count}</h2>
-                <button onClick={sumar}>+</button>
-                <button onClick={restar}>-</button>
-                <button onClick={fin}>comprar</button>
-                <button onClick={restart}>restart</button>
+                <Button onClick={sumar}  variant="outline-primary">+</Button>
+                <Button onClick={restar} variant="outline-primary">-</Button>
+                <Button onClick={fin} variant="outline-primary">Terminar</Button>
+                <Button onClick={restart} variant="outline-primary">Restart</Button>
             </div>
         </section>
     )
