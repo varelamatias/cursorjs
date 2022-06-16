@@ -1,24 +1,35 @@
-import { useState, useEffect } from "react"
-import { getFetchOne } from "../Item/Item"
 import ItemDetail from "../ItemDetail/ItemDetail"
+import { useEffect, useState } from "react"
+import { getFetch } from "../Item/Item"
+import { useParams } from "react-router-dom";
 
+function ItemDetailContainer() {
+    const [inventarioAcciones, setInventarioAcciones] = useState([])  
+    const {id} = useParams()
 
-
-const ItemDetailContainer = () => {
-    const [inventarioAccion, setInventarioAccion] = useState({})
     useEffect(() => {
-        getFetchOne()
-        .then((respuesta) => setInventarioAccion(respuesta))
-        .catch(error => console.log(error))
-     
+        if (id) {
+            getFetch()
+            .then((resp) => {
+                setInventarioAcciones(resp.filter(inventarioAcciones =>inventarioAcciones.id === id));
+            })
+            .catch(error => console.log(error))
+            
+            
+        } else {
+            getFetch()
+            .then((resp) => {
+                setInventarioAcciones(resp);
+            })
+            .catch(error => console.log(error))
+        }
+      
     }, [])
-        
     return(
         <>
-            <ItemDetail inventarioAccion = {inventarioAccion}/>
+            <ItemDetail inventarioAcciones = {inventarioAcciones}/>
         </>
     )
 }
-
 
 export default ItemDetailContainer

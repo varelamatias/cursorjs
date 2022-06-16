@@ -8,7 +8,7 @@ import ItemList from '../ItemList/ItemList'
 function ItemListContainer () {
   return (
     <div>
-        <Greeting hola={"HOLA"}/>
+        <Greeting hola={"FinanSolution"}/>
         {/* <ItemCount stock= {5} init={1}/> */}
         <ItemList/>
     </div>
