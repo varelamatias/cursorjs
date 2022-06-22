@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
+// import { Link, NavLink } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
 
-function ItemCount ({stock,init}) {
+function ItemCount ({stock, init, onAdd}) {
 
-    const [ count, setCount] = useState(stock)
+    const [ count, setCount] = useState(init)
 
     function sumar() {
         if (count < stock) {
@@ -17,24 +21,35 @@ function ItemCount ({stock,init}) {
         }
     }
 
-    function restart (){
-        setCount(init)
-    }
+    // function restart (){
+    //     setCount(init)
+    // }
     
-    function fin() {
+    // function fin() {
+    //     console.log(count);
+    // }
+
+    // const onAdd = (cant) =>{
+  //   console.log(cant);
+  // }
+
+    const terminar = ()=>{
+        onAdd(count)
         console.log(count);
     }
 
     return (
-        <section >
+        <Container>
             <div  id="nS" className="">
-                <h2>la cantidad es = {count}</h2>
-                <Button onClick={sumar}  variant="outline-primary">+</Button>
-                <Button onClick={restar} variant="outline-primary">-</Button>
-                <Button onClick={fin} variant="outline-primary">Terminar</Button>
-                <Button onClick={restart} variant="outline-primary">Restart</Button>
+                <h2>Acciones por comprar = {count}</h2>
+                <Button onClick={sumar}  variant="success">+</Button>
+                <Button onClick={restar} variant="danger">-</Button>
+                {/* <Link to= '/cart'> */}
+                <Button onClick={terminar}  variant="primary" >Comprar</Button>
+                {/* </Link> */}
+                {/* <Button onClick={restart} variant="outline-primary">Restart</Button> */}
             </div>
-        </section>
+        </Container>
     )
   }
   

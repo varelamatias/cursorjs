@@ -1,10 +1,21 @@
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
+import ItemCount from '../ItemCount/ItemCount';
 
 
 
 const ItemDetail = ({ inventarioAcciones }) => {
+
+    const [cantidad, setCantidad] = useState()
+
+    const onAdd = (count) =>{
+        setCantidad(count)
+        console.log(count);
+    }
+
+
     return (
         <div className="secA">
             {
@@ -18,10 +29,18 @@ const ItemDetail = ({ inventarioAcciones }) => {
                                         <Card.Body>
                                             <Card.Title>{acc.nombre}</Card.Title>
                                             <Card.Subtitle className="mb-2 text-muted">${acc.precio}</Card.Subtitle>
+                                            <div>
+                                                {cantidad ?
+                                                <Link to = '/cart'>
+                                                <Button >Ir al carrito</Button>
+                                                </Link>:
+                                                <ItemCount stock= {5} init= {1} onAdd = {onAdd}/> 
+                                                }
+                                            </div>
                                             <Link to = '/'>
-                                                <Button className="btn btn-dark" variant="primary" id={acc.id}>Regresar</Button>
+                                                <Button variant="secondary" size="sm" id={acc.id}>Regresar</Button>
                                             </Link>
-                                            <Button className="btn btn-dark" variant="primary" id={acc.id}>Comprar</Button>
+                                            {/* <Button className="btn btn-dark" variant="primary" id={acc.id}>Comprar</Button> */}
                                         </Card.Body>
                                     </Card>}
                             </div>
@@ -30,7 +49,7 @@ const ItemDetail = ({ inventarioAcciones }) => {
                 </div>
             }
         </div>
-
+        
     )
 
 }

@@ -33,7 +33,7 @@ function ItemList() {
 
 
 
-    }, [])
+    }, [categoriaId])
 
 
     return (
