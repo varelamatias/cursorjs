@@ -33,7 +33,7 @@ function ItemCount ({stock, init, onAdd}) {
   //   console.log(cant);
   // }
 
-    const terminar = ()=>{
+    const agregarC = ()=>{
         onAdd(count)
         console.log(count);
     }
@@ -45,7 +45,7 @@ function ItemCount ({stock, init, onAdd}) {
                 <Button onClick={sumar}  variant="success">+</Button>
                 <Button onClick={restar} variant="danger">-</Button>
                 {/* <Link to= '/cart'> */}
-                <Button onClick={terminar}  variant="primary" >Comprar</Button>
+                <Button onClick={agregarC}  variant="primary" >Agregar</Button>
                 {/* </Link> */}
                 {/* <Button onClick={restart} variant="outline-primary">Restart</Button> */}
             </div>

@@ -1,15 +1,17 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState,useContext } from "react"
 import { getFetch } from "../Item/Item"
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link, useParams } from "react-router-dom";
+// import { CartContext } from "../Context/CartContext";
 
 function ItemList() {
     const [inventarioAcciones, setInventarioAcciones] = useState([])
     const [loading, setLoading] = useState(true)
 
-    const { categoriaId } = useParams()
 
+    const { categoriaId } = useParams()
+    // const {item} = useContext(CartContext)
 
     useEffect(() => {
         if (categoriaId) {
@@ -56,13 +58,14 @@ function ItemList() {
                                                 </Link>
                                             </Card.Body>
                                         </Card>}
+                                        
                                 </div>
                             )}
                         </div>
                     </div>
             }
         </div>
-
+        
 
     );
 }

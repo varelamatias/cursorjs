@@ -3,18 +3,19 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
+import { useCartContext } from '../Context/CartContext';
 
 
 
 const ItemDetail = ({ inventarioAcciones }) => {
-
+    const {cart, addToCart} = useCartContext()
     const [cantidad, setCantidad] = useState()
-
+    // const {addToCart}= useContext(CartContext)
+    
     const onAdd = (count) =>{
+        addToCart({...inventarioAcciones, cantidad:count} )
         setCantidad(count)
-        console.log(count);
     }
-
 
     return (
         <div className="secA">
