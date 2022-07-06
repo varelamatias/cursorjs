@@ -3,20 +3,26 @@ import { createContext, useContext } from "react";
 
 
 export const CartContext = createContext([])
-export const useCartContext = ()=> useContext(CartContext)
+export const useCartContext = () => useContext(CartContext)
 
+export const CartContextProvider = ({ children }) => {
 
+    const [cart, setCart] = useState([])
 
-export const CartContextProvider = ({children})=>{
-    
-    const [cart,setCart]=useState ([])
+    const addToCart = (itemCarrito) => {
 
-    const addToCart = (item)=>{
-        setCart([...cart,item])
-    }
+        let previewCarrito = [...cart];
 
-    return(
-        <CartContext.Provider value={{cart,addToCart}}>
+        if (previewCarrito.some((item) => item.producto.id === itemCarrito.producto.id)) {
+            previewCarrito.find((item) => item.producto.id === itemCarrito.producto.id).cantidad += itemCarrito.cantidad;
+            setCart(previewCarrito);
+        } else {
+            setCart([...cart, itemCarrito]);
+        }
+    };
+
+    return (
+        <CartContext.Provider value={{ cart, addToCart }}>
 
             {children}
 

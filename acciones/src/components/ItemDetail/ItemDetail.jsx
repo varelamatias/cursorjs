@@ -13,7 +13,7 @@ const ItemDetail = ({ inventarioAcciones }) => {
     // const {addToCart}= useContext(CartContext)
     
     const onAdd = (count) =>{
-        addToCart({...inventarioAcciones, cantidad:count} )
+        addToCart({producto:inventarioAcciones, cantidad:count})
         setCantidad(count)
     }
 
