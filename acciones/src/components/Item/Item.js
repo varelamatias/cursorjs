@@ -22,3 +22,4 @@ export const getFetch = (id) =>{
         },1000)
     })
 }
+

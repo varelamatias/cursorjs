@@ -11,7 +11,7 @@ const ItemDetail = ({ inventarioAcciones }) => {
     const {cart, addToCart} = useCartContext()
     const [cantidad, setCantidad] = useState()
     // const {addToCart}= useContext(CartContext)
-    
+    const producto = inventarioAcciones[0];
     const onAdd = (count) =>{
         addToCart({producto:inventarioAcciones, cantidad:count})
         setCantidad(count)
